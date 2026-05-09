@@ -6,6 +6,9 @@ import re
 import string
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 api_key = os.environ.get('API_KEY')
 
 st.title("Movie Recommendation and Review Analysis System") 
