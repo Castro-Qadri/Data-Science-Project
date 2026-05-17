@@ -1,78 +1,63 @@
 # Movie Recommendation with Sentiment Analysis System
-The "Movie Recommendation with Sentiment Analysis System" is an innovative project that combines the power of content-based movie recommendation with sentiment analysis of reviews. The system enhances the movie exploration process by analyzing reviews related to the selected movie. It employs a pre-trained sentiment analysis model to determine whether the reviews are positive or negative in nature. This sentiment analysis provides users with insights into the overall reception of the movie by the audience. The sentiment analysis aspect of the system leverages a pre-trained model from the GitHub repository *[Mukesh Mushyakhwo](https://github.com/MukeshMushyakhwo/Review-Sentiment-Analysis.)*. This integration enhances the accuracy and reliability of sentiment classification.
+
+This project combines content-based movie recommendation with review sentiment analysis. The notebook builds the recommendation workflow, performs EDA, trains and compares sentiment models, and evaluates the results. The Streamlit app lets users search for a movie, inspect movie details, read reviews, and see predicted review sentiment.
 
 ## Dataset
-* Dataset was downoaded from kaggle *[TMDB 5000 Movie Dataset]("https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata")*
-* Poster of movies was fetched from TMDB API
 
+- TMDB 5000 Movie Dataset from Kaggle: https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
+- Movie posters and review metadata are fetched from the TMDB API
+- The IMDB review dataset is required for the sentiment-analysis notebook sections
 
+## Project Structure
+
+- [Recommendation_System.ipynb](Recommendation_System.ipynb): notebook for preprocessing, EDA, recommendation logic, sentiment training, and evaluation
+- [WebApp.py](WebApp.py): Streamlit interface for recommendations and sentiment display
+- [Model/](Model): saved recommendation and sentiment artifacts
+- [.streamlit/config.toml](.streamlit/config.toml): Streamlit theme configuration
 
 ## Features
 
-- Content-based movie recommendations based on user input.
-- Detailed movie information, including cast, genre, and release date.
-- Sentiment analysis of movie reviews to determine positive/negative sentiments.
-- User-friendly interface for seamless interaction.
-- Personalization and learning to improve recommendations over time.
+- Content-based recommendations from movie metadata
+- Movie poster, cast, genre, release date, and rating display
+- Sentiment classification of reviews as positive or negative
+- Model comparison and evaluation for sentiment analysis
+- A cleaned dark cinematic UI in Streamlit
 
-## Getting Started
+## Setup
 
-1. Clone this repository: `git clone https://github.com/your_username/movie-recommendation-system.git`
-2. Install required dependencies: `pip install requirements.txt`
+1. Create and activate the project environment.
+2. Install dependencies with `pip install -r requirements.txt`.
+3. Make sure the TMDB API key is available in your environment as `API_KEY`.
 
-## Usage
+## Run the App
 
-1. Run the Streamlit app: `streamlit run app.py`
-2. Input your movie preferences or search for a specific movie title.
-3. Explore recommended movies and review sentiment analysis.
+```bash
+streamlit run WebApp.py
+```
 
-## Text Preprocessing
+## Notebook Notes
 
-Text preprocessing is performed to clean and normalize review text before sentiment analysis. It involves:
-- Converting text to lowercase.
-- Removing links, HTML tags, punctuation, and numbers.
-- Removing extra spaces.
-
-## Cosine Similarity
-
-Cosine similarity is used to measure the similarity between movies based on their feature vectors. It helps in suggesting movies that are similar to the user's preferences.
+- The recommendation code uses sparse TF-IDF and cosine-style similarity to avoid large dense matrices.
+- The IMDB dataset must be present before running the sentiment-analysis cells.
+- The notebook includes EDA plots, sentiment-model comparison, and evaluation plots for the final report.
 
 ## Dependencies
 
-- [Streamlit](https://streamlit.io/)
-- [joblib](https://joblib.readthedocs.io/)
-- [pandas](https://pandas.pydata.org/)
-- [requests](https://docs.python-requests.org/en/latest/)
-- [scikit-learn](https://scikit-learn.org)
+- Streamlit
+- joblib
+- pandas
+- requests
+- scikit-learn
+- matplotlib
+- seaborn
+- nltk
 
----
+## Team
 
-### Streamlit Output
-##### Searched Movie
+Created by Group No 3
 
-![search](https://github.com/MukeshMushyakhwo/Movie-Recommendation-with-Review-Sentiment-Analysis/assets/112608899/5701d6a9-a8c5-4132-8061-394d842e680a)
+Members: Muhammad Ahmad Ijaz, Abubakar Amir, Muhammad Umer
 
-##### Reviews with Sentiment
+Course: Data Science Semester Project 2026
 
-![reviews](https://github.com/MukeshMushyakhwo/Movie-Recommendation-with-Review-Sentiment-Analysis/assets/112608899/76d10e9f-383c-42ee-943d-4b530fb65452)
-
-##### Recommendations
-![recommendations](https://github.com/MukeshMushyakhwo/Movie-Recommendation-with-Review-Sentiment-Analysis/assets/112608899/94a2e34b-fd3c-4a1b-938c-6fcba3fd9b6f)
-
-
-## 🎬 Movie Recommendation & Sentiment Analysis 🍿
-
-Explore, Analyze, and Discover Movies 
-
-🌟Machine Learning and Natural Language Processing 🤖
-
-
-Created by **Mukesh Mushyakhwo**
-
-Contact: mukesh@mukeshmushyakhwo.com.np
-
-GitHub: https://github.com/MukeshMushyakhwo
-
-📧 Feel free to reach out for questions, feedback, or collaboration opportunities.
-
-Happy Movie Watching! 🎥🍿
+Repository: https://github.com/Castro-Qadri/Data-Science-Project
